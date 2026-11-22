@@ -22,7 +22,7 @@ def get_valid_neighbours(position, rows, cols, walls):
         neib_row = row + dr
         neib_col = col + dc
 
-        if is_inside_grid(neib_row, neib_col, rows, cols) and (neib_row, neib_col) not in walls:#
+        if is_inside_grid(neib_row, neib_col, rows, cols) and (neib_row, neib_col) not in walls:
             neighbours.append((row + dr, col + dc))
 
 
@@ -108,20 +108,4 @@ def astar(start, goal, rows, cols, walls):
     return [], visited, exploration_order
 
 if __name__ == "__main__":
-
-    walls = {(1, 2), (2, 2), (3, 1)}
-
-    start = (0, 0)
-    goal = (4, 4)
-
-    rows = 5
-    cols = 5
-
-    bfs_path, bfs_visited = bfs(start, goal, rows, cols, walls)
-    astar_path, astar_visited = astar(start, goal, rows, cols, walls)
-
-    print("BFS path length:", len(bfs_path) - 1)
-    print("A* path length:", len(astar_path) - 1)
-
-    print("BFS explored:", len(bfs_visited))
-    print("A* explored:", len(astar_visited))
+    ...
